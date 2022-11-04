@@ -1,4 +1,4 @@
-<!DOCTYPE html>  
+﻿<!DOCTYPE html>  
 <html>
 <head>  
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />  
@@ -9,17 +9,17 @@ html{height:100%}
 body{height:100%;margin:0px;padding:0px}  
 #container{height:100%}  
 </style>  
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ovWmmBkG8CXNn1CmyBiR5feK8I8ps4iz">
-//v2.0版本的引用方式：src="http://api.map.baidu.com/api?v=2.0&ak=您的密钥"ovWmmBkG8CXNn1CmyBiR5feK8I8ps4iz/wYolHVIQmvBP4iK7BeIzwfGfWfF90OKq
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=KWSoddWr4bd1CXh1gLe4GfmIuPKXuDO9">
+//v2.0版本的引用方式：src="http://api.map.baidu.com/api?v=2.0&ak=您的密钥"KWSoddWr4bd1CXh1gLe4GfmIuPKXuDO9
 </script>
 </head>  
  
 <body>  
 <div id="container"></div> 
 <script type="text/javascript"> 
-var map = new BMap.Map("container");
+var map = new BMap.Map("container",{mapType: BMAP_HYBRID_MAP});
 // 创建地图实例  
-var point = new BMap.Point(123.432340, 41.655555);  //  小南湖 123.432340, 41.655555
+var point = new BMap.Point(123.431340, 41.655415);  //  小南湖 123.431340, 41.655415
 map.addControl(new BMap.MapTypeControl());
 // 创建点坐标  
 map.enableScrollWheelZoom();
