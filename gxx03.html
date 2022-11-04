@@ -1,0 +1,475 @@
+<!DOCTYPE html>  
+<html>
+<head>  
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+<title>Hello, World</title>  
+<style type="text/css">  
+html{height:100%}  
+body{height:100%;margin:0px;padding:0px}  
+#container{height:100%}  
+</style>  
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ovWmmBkG8CXNn1CmyBiR5feK8I8ps4iz">
+//v2.0版本的引用方式：src="http://api.map.baidu.com/api?v=2.0&ak=您的密钥"ovWmmBkG8CXNn1CmyBiR5feK8I8ps4iz/wYolHVIQmvBP4iK7BeIzwfGfWfF90OKq
+</script>
+</head>  
+ 
+<body>  
+<div id="container"></div> 
+<script type="text/javascript"> 
+var map = new BMap.Map("container");
+// 创建地图实例  
+var point = new BMap.Point(123.432340, 41.655555);  //  小南湖 123.432340, 41.655555
+map.addControl(new BMap.MapTypeControl());
+// 创建点坐标  
+map.enableScrollWheelZoom();
+map.centerAndZoom(point, 50);
+var convertor = new BMap.Convertor();
+color = ["red", 'blue', "magenta","green","black","white","cyan", 'darkblue', "yellow","coral","brown","pink"];
+var f = [[0.0,0.0], [0.0,0.0], [0.0,0.0], [0.0,0.0], [0.0,0.0], [0.0,0.0], [0.0,0.0], [0.0,0.0], [0.0,0.0], [0.0,0.0], [0.0,0.0], [0.0,0.0]];
+var b = [[0.0,0.0], [0.0,0.0], [0.0,0.0], [0.0,0.0], [0.0,0.0], [0.0,0.0], [0.0,0.0], [0.0,0.0], [0.0,0.0], [0.0,0.0], [0.0,0.0], [0.0,0.0]];
+var carMk0;
+var carMk1;
+var carMk2;
+var carMk3;
+var carMk4;
+var carMk5;
+var carMk6;
+var carMk7;
+var carMk8;
+var carMk9;
+var carMk10;
+var carMk11;
+var home;
+var myIcon0 = new BMap.Icon('ship0.png', new BMap.Size(100,100),
+    {anchor : new BMap.Size(0, 10)});//初始化终点坐标图标
+
+function test_gxx(value){
+    f = value;
+}
+function clearline(){
+    map.clearOverlays();
+    map.addOverlay(home)
+}
+function addMarkerEnd0(point) {
+        if(carMk0){
+            map.removeOverlay(carMk0);
+        }
+       carMk0 = new BMap.Marker(point);  
+       map.addOverlay(carMk0)                  
+}
+function addMarkerEnd1(point) {
+        if(carMk1){
+            map.removeOverlay(carMk1);
+        }
+       carMk1 = new BMap.Marker(point);  
+       map.addOverlay(carMk1)                  
+}
+function addMarkerEnd2(point) {
+        if(carMk2){
+            map.removeOverlay(carMk2);
+        }
+       carMk2 = new BMap.Marker(point);  
+       map.addOverlay(carMk2)                  
+}
+function addMarkerEnd3(point) {
+        if(carMk3){
+            map.removeOverlay(carMk3);
+        }
+       carMk3 = new BMap.Marker(point);  
+       map.addOverlay(carMk3)                  
+}
+function addMarkerEnd4(point) {
+        if(carMk4){
+            map.removeOverlay(carMk4);
+        }
+       carMk4 = new BMap.Marker(point);  
+       map.addOverlay(carMk4)                  
+}
+function addMarkerEnd5(point) {
+        if(carMk5){
+            map.removeOverlay(carMk5);
+        }
+       carMk5 = new BMap.Marker(point);  
+       map.addOverlay(carMk5)                  
+}
+function addMarkerEnd6(point) {
+        if(carMk6){
+            map.removeOverlay(carMk6);
+        }
+       carMk6 = new BMap.Marker(point);  
+       map.addOverlay(carMk6)                  
+}
+function addMarkerEnd7(point) {
+        if(carMk7){
+            map.removeOverlay(carMk7);
+        }
+       carMk7 = new BMap.Marker(point);  
+       map.addOverlay(carMk7)                  
+}
+function addMarkerEnd8(point) {
+        if(carMk8){
+            map.removeOverlay(carMk8);
+        }
+       carMk8 = new BMap.Marker(point);  
+       map.addOverlay(carMk8)                  
+}
+function addMarkerEnd9(point) {
+        if(carMk9){
+            map.removeOverlay(carMk9);
+        }
+       carMk9 = new BMap.Marker(point);  
+       map.addOverlay(carMk9)                  
+}
+function addMarkerEnd10(point) {
+        if(carMk10){
+            map.removeOverlay(carMk10);
+        }
+       carMk10 = new BMap.Marker(point);  
+       map.addOverlay(carMk10)                  
+}
+function addMarkerEnd11(point) {
+        if(carMk11){
+            map.removeOverlay(carMk11);
+        }
+       carMk11 = new BMap.Marker(point);  
+       map.addOverlay(carMk11)                  
+}
+set_home = function (data){    
+if(home){
+            map.removeOverlay(home);
+        }
+       home = new BMap.Marker(data.points[0]);
+       map.addOverlay(home);
+       clearInterval(first_home)
+}
+
+set_home_new = function(point){
+  var point_home = [];
+	var f_h_n = new BMap.Point(point[0],point[1]);
+    point_home.push(f_h_n);
+    convertor.translate(point_home,1,5,set_home);
+}
+
+first_home = setInterval(function (){
+if(f[0][0]!=0.0){
+    var pointArr_home = [];
+	var f_h = new BMap.Point(f[0][0], f[0][1]);
+    pointArr_home.push(f_h);
+    convertor.translate(pointArr_home,1,5,set_home)
+    }},500);
+
+drawline_0 = function (data){
+      var polyline0 = new BMap.Polyline(
+                [
+                data.points[0],
+                data.points[1]
+                ],
+                {strokeColor:color[0],
+                    strokeWeight:2,
+                    strokeOpacity:1
+                }); 
+map.addOverlay(polyline0);
+addMarkerEnd0(data.points[1])
+}
+
+interval0 = setInterval(function (){
+if((b[0][0]!=0.0)&&(f[0][0]!=0.0)){
+    var pointArr0 = [];
+    var b_0 = new BMap.Point(b[0][0], b[0][1]);
+	var f_0 = new BMap.Point(f[0][0], f[0][1]);
+    pointArr0.push(b_0);
+    pointArr0.push(f_0);
+    convertor.translate(pointArr0,1,5,drawline_0)
+    };
+    b[0] = f[0] },500);
+
+drawline_1 = function (data){
+      var polyline1 = new BMap.Polyline(
+                [
+                data.points[0],
+                data.points[1]
+                ],
+                {strokeColor:color[1],
+                    strokeWeight:2,
+                    strokeOpacity:1
+                }); 
+map.addOverlay(polyline1);
+addMarkerEnd1(data.points[1])
+}
+
+interval1 = setInterval(function (){
+if((b[1][0]!=0.0)&&(f[1][0]!=0.0)){
+    var pointArr1 = [];
+    var b_1 = new BMap.Point(b[1][0], b[1][1]);
+	var f_1 = new BMap.Point(f[1][0], f[1][1]);
+    pointArr1.push(b_1);
+    pointArr1.push(f_1);
+    convertor.translate(pointArr1,1,5,drawline_1)
+    };
+    b[1] = f[1] },500);
+
+drawline_2 = function (data){
+      var polyline2 = new BMap.Polyline(
+                [
+                data.points[0],
+                data.points[1]
+                ],
+                {strokeColor:color[2],
+                    strokeWeight:2,
+                    strokeOpacity:1
+                }); 
+map.addOverlay(polyline2);
+addMarkerEnd2(data.points[1])
+}
+
+interval2 = setInterval(function (){
+if((b[2][0]!=0.0)&&(f[2][0]!=0.0)){
+    var pointArr2 = [];
+    var b_2 = new BMap.Point(b[2][0], b[2][1]);
+	var f_2 = new BMap.Point(f[2][0], f[2][1]);
+    pointArr2.push(b_2);
+    pointArr2.push(f_2);
+    convertor.translate(pointArr2,1,5,drawline_2)
+    };
+    b[2] = f[2] },500);
+
+drawline_3 = function (data){
+      var polyline3 = new BMap.Polyline(
+                [
+                data.points[0],
+                data.points[1]
+                ],
+                {strokeColor:color[3],
+                    strokeWeight:2,
+                    strokeOpacity:1
+                }); 
+map.addOverlay(polyline3);
+addMarkerEnd3(data.points[1])
+}
+
+interval3 = setInterval(function (){
+if((b[3][0]!=0.0)&&(f[3][0]!=0.0)){
+    var pointArr3 = [];
+    var b_3 = new BMap.Point(b[3][0], b[3][1]);
+	var f_3 = new BMap.Point(f[3][0], f[3][1]);
+    pointArr3.push(b_3);
+    pointArr3.push(f_3);
+    convertor.translate(pointArr3,1,5,drawline_3)
+    };
+    b[3] = f[3] },500);
+
+drawline_4 = function (data){
+      var polyline4 = new BMap.Polyline(
+                [
+                data.points[0],
+                data.points[1]
+                ],
+                {strokeColor:color[4],
+                    strokeWeight:2,
+                    strokeOpacity:1
+                }); 
+map.addOverlay(polyline4);
+addMarkerEnd4(data.points[1])
+}
+
+interval4 = setInterval(function (){
+if((b[4][0]!=0.0)&&(f[4][0]!=0.0)){
+    var pointArr4 = [];
+    var b_4 = new BMap.Point(b[4][0], b[4][1]);
+	var f_4 = new BMap.Point(f[4][0], f[4][1]);
+    pointArr4.push(b_4);
+    pointArr4.push(f_4);
+    convertor.translate(pointArr4,1,5,drawline_4)
+    };
+    b[4] = f[4] },500);
+drawline_5 = function (data){
+      var polyline5 = new BMap.Polyline(
+                [
+                data.points[0],
+                data.points[1]
+                ],
+                {strokeColor:color[5],
+                    strokeWeight:2,
+                    strokeOpacity:1
+                }); 
+map.addOverlay(polyline5);
+addMarkerEnd5(data.points[1])
+}
+
+interval5 = setInterval(function (){
+if((b[5][0]!=0.0)&&(f[5][0]!=0.0)){
+    var pointArr5 = [];
+    var b_5 = new BMap.Point(b[5][0], b[5][1]);
+	var f_5 = new BMap.Point(f[5][0], f[5][1]);
+    pointArr5.push(b_5);
+    pointArr5.push(f_5);
+    convertor.translate(pointArr5,1,5,drawline_5)
+    };
+    b[5] = f[5] },500);
+
+drawline_6 = function (data){
+      var polyline6 = new BMap.Polyline(
+                [
+                data.points[0],
+                data.points[1]
+                ],
+                {strokeColor:color[6],
+                    strokeWeight:2,
+                    strokeOpacity:1
+                }); 
+map.addOverlay(polyline6);
+addMarkerEnd6(data.points[1])
+}
+
+interval6 = setInterval(function (){
+if((b[6][0]!=0.0)&&(f[6][0]!=0.0)){
+    var pointArr6 = [];
+    var b_6 = new BMap.Point(b[6][0], b[6][1]);
+	var f_6 = new BMap.Point(f[6][0], f[6][1]);
+    pointArr6.push(b_6);
+    pointArr6.push(f_6);
+    convertor.translate(pointArr6,1,5,drawline_6)
+    };
+    b[6] = f[6] },500);
+
+drawline_7 = function (data){
+      var polyline7 = new BMap.Polyline(
+                [
+                data.points[0],
+                data.points[1]
+                ],
+                {strokeColor:color[7],
+                    strokeWeight:2,
+                    strokeOpacity:1
+                }); 
+map.addOverlay(polyline7);
+addMarkerEnd7(data.points[1])
+}
+
+interval7 = setInterval(function (){
+if((b[7][0]!=0.0)&&(f[7][0]!=0.0)){
+    var pointArr7 = [];
+    var b_7 = new BMap.Point(b[7][0], b[7][1]);
+	var f_7 = new BMap.Point(f[7][0], f[7][1]);
+    pointArr7.push(b_7);
+    pointArr7.push(f_7);
+    convertor.translate(pointArr7,1,5,drawline_7)
+    };
+    b[7] = f[7] },500);
+
+drawline_8 = function (data){
+      var polyline8 = new BMap.Polyline(
+                [
+                data.points[0],
+                data.points[1]
+                ],
+                {strokeColor:color[8],
+                    strokeWeight:2,
+                    strokeOpacity:1
+                }); 
+map.addOverlay(polyline8);
+addMarkerEnd8(data.points[1])
+}
+
+interval8 = setInterval(function (){
+if((b[8][0]!=0.0)&&(f[8][0]!=0.0)){
+    var pointArr8 = [];
+    var b_8 = new BMap.Point(b[8][0], b[8][1]);
+	var f_8 = new BMap.Point(f[8][0], f[8][1]);
+    pointArr8.push(b_8);
+    pointArr8.push(f_8);
+    convertor.translate(pointArr8,1,5,drawline_8)
+    };
+    b[8] = f[8] },500);
+
+drawline_9 = function (data){
+      var polyline9 = new BMap.Polyline(
+                [
+                data.points[0],
+                data.points[1]
+                ],
+                {strokeColor:color[9],
+                    strokeWeight:2,
+                    strokeOpacity:1
+                }); 
+map.addOverlay(polyline9);
+addMarkerEnd9(data.points[1])
+}
+
+interval9 = setInterval(function (){
+if((b[9][0]!=0.0)&&(f[9][0]!=0.0)){
+    var pointArr9 = [];
+    var b_9 = new BMap.Point(b[9][0], b[9][1]);
+	var f_9 = new BMap.Point(f[9][0], f[9][1]);
+    pointArr9.push(b_9);
+    pointArr9.push(f_9);
+    convertor.translate(pointArr9,1,5,drawline_9)
+    };
+    b[9] = f[9] },500);
+
+drawline_10 = function (data){
+      var polyline10 = new BMap.Polyline(
+                [
+                data.points[0],
+                data.points[1]
+                ],
+                {strokeColor:color[10],
+                    strokeWeight:2,
+                    strokeOpacity:1
+                }); 
+map.addOverlay(polyline10);
+addMarkerEnd10(data.points[1])
+}
+
+interval10 = setInterval(function (){
+if((b[10][0]!=0.0)&&(f[10][0]!=0.0)){
+    var pointArr10 = [];
+    var b_10 = new BMap.Point(b[10][0], b[10][1]);
+	var f_10 = new BMap.Point(f[10][0], f[10][1]);
+    pointArr10.push(b_10);
+    pointArr10.push(f_10);
+    convertor.translate(pointArr10,1,5,drawline_10)
+    };
+    b[10] = f[10] },500);
+
+drawline_11 = function (data){
+      var polyline11 = new BMap.Polyline(
+                [
+                data.points[0],
+                data.points[1]
+                ],
+                {strokeColor:color[11],
+                    strokeWeight:2,
+                    strokeOpacity:1
+                }); 
+map.addOverlay(polyline11);
+addMarkerEnd11(data.points[1])
+}
+
+interval11 = setInterval(function (){
+if((b[11][0]!=0.0)&&(f[11][0]!=0.0)){
+    var pointArr11 = [];
+    var b_11 = new BMap.Point(b[11][0], b[11][1]);
+	var f_11 = new BMap.Point(f[11][0], f[11][1]);
+    pointArr11.push(b_11);
+    pointArr11.push(f_11);
+    convertor.translate(pointArr11,1,5,drawline_11)
+    };
+    b[11] = f[11] },500);
+
+set_center = function (data){
+      map.centerAndZoom(data.points[0], 50)
+    }
+interval_c = setInterval(function (){
+    if((b[0][0]!=0.0)&&(f[0][0]!=0.0)){
+    var pointArr5 = [];
+    var b_c = new BMap.Point(b[0][0], b[0][1]);
+    pointArr5.push(b_c);
+    convertor.translate(pointArr5,1,5,set_center)
+    };
+},4000);
+
+</script>  
+</body>  
+</html>
